@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">American Football Scorer</string>
+    <string name="touchdownBtnTxt">Touchdown</string>
+    <string name="onePntCnvBtnTxt">One Point Conversion</string>
+    <string name="twoPntCnvBtnTxt">Two Point Conversion</string>
+    <string name="fieldGoalBtnTxt">Field Goal</string>
+    <string name="safetyBtnTxt">Safety</string>
+    <string name="resetBtnTxt">Reset</string>
+</resources>

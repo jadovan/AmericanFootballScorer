@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="teamLayoutWidth">0dp</dimen>
+    <dimen name="teamLayoutWeight">1</dimen>
+    <dimen name="imagePadding">16dp</dimen>
+    <dimen name="scoreTxtPaddingBtm">24dp</dimen>
+    <dimen name="scoreTxtSize">56sp</dimen>
+    <dimen name="teamBtnMarginBtm">8dp</dimen>
+    <dimen name="teamBtnMarginLftRt">24dp</dimen>
+    <dimen name="lineWidth">4dp</dimen>
+    <dimen name="linePadding">8dp</dimen>
+    <dimen name="resetBtnWeight">0</dimen>
+    <dimen name="resetBtnMarginTop">8dp</dimen>
+</resources>
