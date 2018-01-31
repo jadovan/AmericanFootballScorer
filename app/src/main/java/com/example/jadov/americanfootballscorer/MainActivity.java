@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt(SCORE_B, scoreTeamB);
     }
 
+    /*
+    **Displays the scores for teams A and B respectively
+    * @param score for each team
+     */
     public void displayForTeamA(int score) {
         scoreViewA.setText(String.valueOf(score));
     }
