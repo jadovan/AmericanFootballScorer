@@ -9,13 +9,21 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
+    // declare variables
     private static final String SCORE_A = "scoreA";
     private static final String SCORE_B = "scoreB";
+    private static final String TIMEOUT_A = "timeoutA";
+    private static final String TIMEOUT_B = "timeoutB";
 
     private TextView scoreViewA;
     private TextView scoreViewB;
     private int scoreTeamA = 0;
     private int scoreTeamB = 0;
+
+    private TextView timeoutViewA;
+    private TextView timeoutViewB;
+    private int timeoutTeamA = 3;
+    private int timeoutTeamB = 3;
 
 
     @Override
@@ -23,15 +31,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        scoreViewA = (TextView) findViewById(R.id.team_a_score);
-        scoreViewB = (TextView) findViewById(R.id.team_b_score);
+        // call TextViews
+        scoreViewA = findViewById(R.id.team_a_score);
+        timeoutViewA = findViewById(R.id.timeouts_team_a);
+        scoreViewB = findViewById(R.id.team_b_score);
+        timeoutViewB = findViewById(R.id.timeouts_team_b);
 
         displayForTeamA(scoreTeamA);
+        timeoutForTeamA(timeoutTeamA);
         displayForTeamB(scoreTeamB);
+        timeoutForTeamB(timeoutTeamB);
 
+        // handles orientation changes
         if (savedInstanceState != null) {
             scoreTeamA = savedInstanceState.getInt(SCORE_A, scoreTeamA);
+            timeoutTeamA = savedInstanceState.getInt(TIMEOUT_A, timeoutTeamA);
             scoreTeamB = savedInstanceState.getInt(SCORE_B, scoreTeamB);
+            timeoutTeamB = savedInstanceState.getInt(TIMEOUT_B, timeoutTeamB);
         }
     }
 
@@ -39,33 +55,50 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
+        // handles orientation changes
         scoreTeamA = savedInstanceState.getInt(SCORE_A, scoreTeamA);
+        timeoutTeamA = savedInstanceState.getInt(TIMEOUT_A, timeoutTeamA);
         scoreTeamB = savedInstanceState.getInt(SCORE_B, scoreTeamB);
+        timeoutTeamB = savedInstanceState.getInt(TIMEOUT_B, timeoutTeamB);
 
         displayForTeamA(scoreTeamA);
+        timeoutForTeamA(timeoutTeamA);
         displayForTeamB(scoreTeamB);
-
+        timeoutForTeamB(timeoutTeamB);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
+        // handles orientation changes
         outState.putInt(SCORE_A, scoreTeamA);
+        outState.putInt(TIMEOUT_A, timeoutTeamA);
         outState.putInt(SCORE_B, scoreTeamB);
+        outState.putInt(TIMEOUT_B, timeoutTeamB);
     }
 
-    /*
-    **Displays the scores for teams A and B respectively
-    * @param score for each team
-     */
+    // displays score for Team A
     public void displayForTeamA(int score) {
         scoreViewA.setText(String.valueOf(score));
     }
 
+    // displays timeouts for Team A
+    public void timeoutForTeamA(int timeout) {
+        timeoutViewA.setText(String.valueOf(timeout));
+    }
+
+    // displays score for Team B
     public void displayForTeamB(int score) {
         scoreViewB.setText(String.valueOf(score));
     }
+
+    // displays timeouts for Team B
+    public void timeoutForTeamB(int timeout) {
+        timeoutViewB.setText(String.valueOf(timeout));
+    }
+
+    /* methods for scoring and timeouts for Team A ********************************************** */
 
     public void touchdownTeamA(View view) {
         scoreTeamA += 6;
@@ -87,6 +120,17 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
     }
 
+    public void takeTimeoutTeamA(View view) {
+        if (timeoutTeamA > 0) {
+            timeoutTeamA -= 1;
+            timeoutForTeamA(timeoutTeamA);
+        }
+    }
+
+    /* ****************************************************************************************** */
+
+    /* methods for scoring and timeouts for Team A ********************************************** */
+
     public void touchdownTeamB(View view) {
         scoreTeamB += 6;
         displayForTeamB(scoreTeamB);
@@ -107,13 +151,27 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(scoreTeamB);
     }
 
+    public void takeTimeoutTeamB(View view) {
+        if (timeoutTeamB > 0) {
+            timeoutTeamB -= 1;
+            timeoutForTeamB(timeoutTeamB);
+        }
+    }
+
+    /* ****************************************************************************************** */
+
+    // resets all scores and timeouts
     public void resetScore(View view) {
         scoreTeamA = 0;
         scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
-    }
 
+        timeoutTeamA = 3;
+        timeoutTeamB = 3;
+        timeoutForTeamA(timeoutTeamA);
+        timeoutForTeamB(timeoutTeamB);
+    }
 
 }
 

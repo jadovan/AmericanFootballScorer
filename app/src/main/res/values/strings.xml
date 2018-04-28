@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">American Football Scorer</string>
     <string name="touchdownBtnTxt">Touchdown</string>
-    <string name="onePntCnvBtnTxt">One Point Conversion</string>
-    <string name="twoPntCnvBtnTxt">Two Point Conversion</string>
+    <string name="onePntCnvBtnTxt">1 Point Conv</string>
+    <string name="twoPntCnvBtnTxt">2 Point Conv / Safety</string>
     <string name="fieldGoalBtnTxt">Field Goal</string>
-    <string name="safetyBtnTxt">Safety</string>
+    <string name="timeoutBtnTxt">Timeout</string>
     <string name="resetBtnTxt">Reset</string>
+    <string name="timeouts">Timeouts:</string>
 </resources>

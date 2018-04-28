@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:background">@android:color/white</item>
-    </style>
-
-    <style name="TeamOne.Button" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorAccent">@color/teamOneButton</item>
-    </style>
-
-    <style name="TeamTwo.Button" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorAccent">@color/teamTwoButton</item>
-    </style>
-
-    <style name="Reset.Button" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorAccent">@color/resetButton</item>
     </style>
 </resources>

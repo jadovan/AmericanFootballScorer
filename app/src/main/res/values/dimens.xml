@@ -4,9 +4,13 @@
     <dimen name="teamLayoutWeight">1</dimen>
     <dimen name="imagePadding">16dp</dimen>
     <dimen name="scoreTxtPaddingBtm">24dp</dimen>
-    <dimen name="scoreTxtSize">56sp</dimen>
+    <dimen name="timeoutTxtMarginTop">12dp</dimen>
+    <dimen name="scoreTxtSize">60sp</dimen>
+    <dimen name="timeoutTxtSize">30sp</dimen>
     <dimen name="teamBtnMarginBtm">8dp</dimen>
     <dimen name="teamBtnMarginLftRt">24dp</dimen>
+    <dimen name="timeoutBtnMarginRt">8dp</dimen>
+    <dimen name="timeoutBtnMarginTopBtm">8dp</dimen>
     <dimen name="lineWidth">4dp</dimen>
     <dimen name="linePadding">8dp</dimen>
     <dimen name="resetBtnWeight">0</dimen>
